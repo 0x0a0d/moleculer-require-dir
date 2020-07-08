@@ -10,10 +10,15 @@ const scanDir = require('./scanDir')
  *
  * @param {string} dir
  * @param {MoleculerRequireDirOptions} options
+ * @param {*} defaultValue
  * @return {Object}
  */
-module.exports = function (dir, options = {}) {
-  const directory = path.dirname(module.parent.filename)
-  const reqPath = path.resolve(directory, dir)
-  return scanDir(reqPath, {}, options)
+module.exports = function (dir, options = {}, defaultValue) {
+  try {
+    const directory = path.dirname(module.parent.filename)
+    const reqPath = path.resolve(directory, dir)
+    return scanDir(reqPath, {}, options)
+  } catch (e) {
+    return defaultValue
+  }
 }

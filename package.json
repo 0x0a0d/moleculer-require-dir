@@ -1,6 +1,6 @@
 {
   "name": "moleculer-require-dir",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "load dir recurse with this module",
   "main": "index.js",
   "scripts": {

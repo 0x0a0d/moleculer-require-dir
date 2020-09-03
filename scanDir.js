@@ -10,7 +10,7 @@ module.exports = function scanDir (dir, obj = {}, options) {
     const stat = fs.statSync(itemPath)
     if (stat.isFile()) {
       let fileName = getFileName(item)
-      if (options.camelCase === true) {
+      if (fileName !== '*' && options.camelCase === true) {
         fileName = camelCase(fileName)
       }
       try {
